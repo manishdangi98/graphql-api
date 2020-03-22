@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://graph:graphapi@cluster0-o5czy.mongodb.net/test?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://graph:graphapi@cluster0-o5czy.mongodb.net/test?retryWrites=true&w=majority',{useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
 mongoose.connection.once('open',()=>{
     console.log('connected to the database');
 })
